@@ -1,0 +1,53 @@
+
+	   
+011	.?	Feeling Lucky			----
+140	.X	Reboot Guider			----
+141	.X	Restore Display			----
+142	.X	Shutdown Guider			----
+160	.?	switch to guider		----
+161	.?	switch to dtu			----
+162	.?	Large Window			----
+163	.?	Small window			----
+164	.?	Window Track TC			wx(us)	wy(us)	wd(us)	tx(us)	ty(us)
+165	.?	small window times		tt(uc)	et(ui)
+166	.?	large window times		tt(uc)	et(ui)
+200	.X	Init Mode TC 			----
+201	.X	AutoCollimation TC		----
+202	.?	Alignment Mode TC		ra(d)		dec(d)
+204	.?	EL CE Offsets  			el(f)		ce(f)
+205	.?	Alignment Submode TC		sm(uc)	xc(us)	yc(us)	d(us)	tt(uc)	et(ui)
+206	.?	X and Y offsets			x(f)	y(f)
+210	.?	Set ROI TC			// not used?
+211	.?	Exposure Time TC		mode(uc)	tt(uc)	et(ui)
+212	.-	Normalized Gain TC		ng(ui)
+213	.-	Absolute Offset TC		offset(i)
+214	.?	Zoom Toggle			----
+215	.?	Display Parameters TC		bright(uc)	contrast(uc)	gamma(uc)
+219	.?	nudge tracking	   		el(c)		ce(c)
+221	.?	FrameBlob Gain			gain(d)
+222	.?	FrameBlob Saturation Value	satval(uc)
+223	.?	Frameblob Threshold  		thr(d)
+224	.?	Frameblob Distance Tolerance	disttol(i)
+225	.?	Frameblob Grid Size		gridsize(ui)
+226	.?	FrameBlob Centroid Box		cenbox(ui)
+227	.?	FrameBlob Aperture Box		apbox(ui)
+228	.?	FrameBlob Readout Offset	ro(d)
+229	.?	FrameBlob Readout Noise		rn(d)
+230	.?	Focus TC			focus(us)
+231	.?	Home Camera TC			-----
+232	.?	Focal Plane Lights ON		-----
+233	.?	Focal Plane Lights OFF		-----
+235	.-	Platescale TC	   		ps(d)
+238	.?	Toggle DAC output		on/off(uc)
+242	.?	Set Tracking Point		x(us)		y(us)
+243	.?	max step tc  			stepsize(f)
+245	.-	locked fc			wx(us)	wy(us)	wd(us)	expt(ui)	tt(uc)	tpx(us)	tpy(us)
+246	.-	locked roi tc			rx(us)	ry(us)	rd(us)	expt(ui)	tt(uc)
+247	.-	guiding fc tc			expt(ui)	tt(uc)	ra(d)	dec(d) // probably not used
+248	.-	guiding roi tc			expt(ui)	tt(uc)	ra(d)	dec(d) // probably not used
+249	.?	Fix Offset TC			-----
+250	.-	Turn off MPF message		-----
+251	.-	Turn ON MPF message		-----
+252	-	Turn OFF from MPF message	-----
+253	-	Turn ON from MPF message	-----
+255	.	reset program			-----

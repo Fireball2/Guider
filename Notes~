@@ -1,0 +1,68 @@
+2014.04.15
+OK, Let's start from scratch. Again.
+
+I copy the folder for mint_camera_only before I touched anything
+I go to /src/parameters.hpp
+	I change HOMEPATH to the place where the latest version is
+	I change MAXRETRY to 10 (from 100)
+	I change CAM_GRAB_N_PICS to 1 (from -1)
+	I change CAM_EXPOSURE to 5 (from 1)
+	I save the changes
+I go to /src/log.hpp
+	I change HD1_PATH to "/home/salo/0.Jose/2.mintguider/0.Versions/2015.04.15/mint_camera_only/log1/"
+	I change HD2_PATH to "/home/salo/0.Jose/2.mintguider/0.Versions/2015.04.15/mint_camera_only/log2/"
+	I change HD3_PATH to /home/salo/0.Jose/2.mintguider/0.Versions/2015.04.15/mint_camera_only/usb/"
+	I save the changes
+Try to execute it from shell. Go to the folder and enter "sudo make run"
+It runs with error messages
+	First, it cannot find the /usb/ folder I indicated to save the 3rd copy of the log. I create it manually to avoid error the next time
+	It indicates it tries to set the binning to 2x2 (why)? But does ot succeed 
+***Look at the binning thing***
+	Error saving the image as a FITS file. It says it cannot create the name. I check that effectively, not FITS file has been saved.
+	I think it is because it adds a ! at the beginning of the name (why?)
+	I go to /src/main.cpp change the line where the filename is created to eliminate the "!" at the beginning
+I try again to execute it from shell. Go to the folder and enter "sudo make run"
+	The logs are ok
+	Same weird message on binning (and ROI)
+	Same problem saving the file
+	I go to another version of the file in which this was solved to see the difference
+`	It seems that the version in 1.Mint works
+I decide to copy this version to my directory as a starting version, instead.
+I check the contents of the folder, create the usb folder to save the 3rd copy of the logs. Erase images and old logs....
+I do the changes explained above in /src/parameters.hpp and /src/log.hpp
+Try to execute it from shell. Go to the folder and enter "sudo make run"
+It seems to work without problems
+I check the image using SAO9
+The image is grey, I don't like it. I open fully the diafragm and repeat. Still, I don't like it. I check what were the parameters in other versions
+I change the exposure time to 5 ms and repeat
+I close the diaphragm and repeat
+500 ms full open lens. Repeat
+Again, weird image. I go to a previous version and execute
+Something weird about exposure that will be fixed later. I need to start moving forward with my new program.
+- Adding a new executable to test guidance
+- I add a new .cpp and .hpp files which are z_guide and modify the Makefile to create them
+	I create z_guide. The only thing it does is to print a statement
+	After some fight, I manage to make it run.
+	I start adding functions, first, I want to open the camera and close it.
+	For this I add the same dependencies as I had for main in the Makefile
+***
+	Interestingly when running mint from bin with ./MINT, it cannot even open the camera (core dump)!!!! There is a serious bug there
+	For some black magic reason, after starting the terminal it seems it works
+- Now I am at a point in which I have the image stored in a pointer. Time to add Matt's functions
+- First I need to be able to create a frameblob for the frame I just got from the camera
+	- I copy frameblob.hpp, frameblob.cpp, bloblist.h and bloblist.cpp to mint/.../src
+	- I #include frameblob.h to zguide.hpp
+	- I modify Makefile adding bloblist.o and frameblob.o to the list of dependencies of zguide
+
+
+
+
+
+
+
+
+
+	
+
+	
+

@@ -1,0 +1,10 @@
+TIMESTEP 10.0
+STEPS 5
+RELATIVE 1
+REPEAT 1 
+0      0
+200      0
+200      200
+0      200
+0      0
+

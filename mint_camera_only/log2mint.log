@@ -1,0 +1,734 @@
+      	            open_log	11/11/2015 09:58:26:000000	Successfully opened logfile (1) at /home/salo/FB/Fireball2/mint_camera_only/log2
+      	            open_log	11/11/2015 09:58:26:000000	Successfully opened logfile (2) at /home/salo/FB/Fireball2/mint_camera_only/usb
+      	                main	11/11/2015 09:58:26:000000	Connect to camera
+      	        start_camera	11/11/2015 09:58:26:000000	Entering start_camera
+      	        start_camera	11/11/2015 09:58:26:000000	Attempt #  1 of opening the camera.
+      	        start_camera	11/11/2015 09:58:27:000000	Opening camera
+      	        start_camera	11/11/2015 09:58:31:200000	Camera opened
+      	        start_camera	11/11/2015 09:58:31:200000	Opening frame grabber
+      	        start_camera	11/11/2015 09:58:32:620000	Grabber opened
+      	        start_camera	11/11/2015 09:58:32:620000	Arming camera
+Warning	        start_camera	11/11/2015 09:58:32:620000	Could not arm camera. Msg: 0x80031022
+      	        start_camera	11/11/2015 09:58:32:620000	Getting size of the image sent by the camera
+      	        start_camera	11/11/2015 09:58:32:620000	Image size is 2560x2160.
+      	        start_camera	11/11/2015 09:58:32:620000	Getting pixel rate
+      	        start_camera	11/11/2015 09:58:32:620000	Pixel rate is 95333333.
+      	        start_camera	11/11/2015 09:58:32:620000	Computing data format
+      	        start_camera	11/11/2015 09:58:32:620000	width<=1920 2560 || pixelrate <286000000 95333333 Dataformat 0x105.
+      	        start_camera	11/11/2015 09:58:32:620000	Setting transfer parameters
+      	        start_camera	11/11/2015 09:58:32:620000	Transfer parameters set.
+      	        start_camera	11/11/2015 09:58:32:620000	Arming camera again
+Warning	        start_camera	11/11/2015 09:58:32:620000	Could not arm camera. Msg: 0x80031022
+      	        start_camera	11/11/2015 09:58:32:620000	Setting data format
+      	        start_camera	11/11/2015 09:58:32:620000	Data format set.
+      	        start_camera	11/11/2015 09:58:32:620000	Setting image size expected by the grabber to 2560x2160
+      	        start_camera	11/11/2015 09:58:32:620000	Set image size on grabber.
+      	        start_camera	11/11/2015 09:58:32:620000	Attempting to allocate 20 frame buffers (default from windows program)
+      	        start_camera	11/11/2015 09:58:32:680000	Frame buffer allocated.
+      	        start_camera	11/11/2015 09:58:32:680000	Setting recording state to 1 (ON)
+      	        start_camera	11/11/2015 09:58:32:680000	Recoding state set to 1 (ON)
+      	        start_camera	11/11/2015 09:58:32:680000	Leaving start_camera
+      	         grab_single	11/11/2015 09:58:32:680000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:32:680000	Start aquire
+      	         grab_single	11/11/2015 09:58:32:680000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:32:680000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:32:680000	Image retrived
+      	         grab_single	11/11/2015 09:58:32:680000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:32:680000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:32:680000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:32:680000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:32:680000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:32:680000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:32:680000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:32:680000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:32:680000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:32:680000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:32:680000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:32:680000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:32:680000	Image (timestamp img_nr 82390721) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:32:680000	Leaving grab_single
+      	                main	11/11/2015 09:58:32:680000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:32:690000	Image inverted
+      	                main	11/11/2015 09:58:32:690000	Forming filename using system time information
+      	                main	11/11/2015 09:58:32:690000	Filename formed. Result: /home/salo/FB/Fireball2/mint_camera_only/imgs/2015-11-11_09-58-26_690000.fits
+      	                main	11/11/2015 09:58:32:690000	Attempting to save image
+      	       save_ptr2fits	11/11/2015 09:58:32:690000	Creating file
+      	       save_ptr2fits	11/11/2015 09:58:32:690000	File created
+      	       save_ptr2fits	11/11/2015 09:58:32:690000	Creating image structure
+      	       save_ptr2fits	11/11/2015 09:58:32:690000	Image created.
+      	       save_ptr2fits	11/11/2015 09:58:32:690000	Writing pixels to image structure
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Image pixels written.
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Closing file
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	File closed.
+      	                main	11/11/2015 09:58:41:770000	Forming filename using system time information
+      	                main	11/11/2015 09:58:41:770000	Filename formed. Result: /home/salo/FB/Fireball2/mint_camera_only/imgs/2015-11-11_09-58-26_770000_cropped.fits
+      	                main	11/11/2015 09:58:41:770000	Attempting to save image
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Creating file
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	File created
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Creating image structure
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Image created.
+      	       save_ptr2fits	11/11/2015 09:58:41:770000	Writing pixels to image structure
+      	       save_ptr2fits	11/11/2015 09:58:50:860000	Image pixels written.
+      	       save_ptr2fits	11/11/2015 09:58:50:860000	Closing file
+      	       save_ptr2fits	11/11/2015 09:58:50:860000	File closed.
+      	         grab_single	11/11/2015 09:58:50:880000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:880000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:880000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:880000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:50:880000	Image retrived
+      	         grab_single	11/11/2015 09:58:50:880000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:50:880000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:50:880000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:50:880000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:50:880000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:50:880000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:50:880000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:50:880000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:50:880000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:880000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:880000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:880000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:880000	Image (timestamp img_nr 36695229) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:50:880000	Leaving grab_single
+      	                main	11/11/2015 09:58:50:880000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:50:890000	Image inverted
+      	         grab_single	11/11/2015 09:58:50:890000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:890000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:890000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:890000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:50:890000	Image retrived
+      	         grab_single	11/11/2015 09:58:50:890000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:50:890000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:50:890000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:50:890000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:50:890000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:50:890000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:50:890000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:50:890000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:50:890000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:890000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:890000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:900000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:900000	Image (timestamp img_nr 125323318) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:50:900000	Leaving grab_single
+      	                main	11/11/2015 09:58:50:900000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:50:900000	Image inverted
+      	         grab_single	11/11/2015 09:58:50:900000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:900000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:900000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:900000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:50:900000	Image retrived
+      	         grab_single	11/11/2015 09:58:50:900000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:50:900000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:50:900000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:50:900000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:50:900000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:50:900000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:50:900000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:50:900000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:50:900000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:900000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:900000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:900000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:900000	Image (timestamp img_nr 46301333) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:50:900000	Leaving grab_single
+      	                main	11/11/2015 09:58:50:900000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:50:910000	Image inverted
+      	         grab_single	11/11/2015 09:58:50:910000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:910000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:910000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:910000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:50:910000	Image retrived
+      	         grab_single	11/11/2015 09:58:50:910000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:50:910000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:50:910000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:50:910000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:50:910000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:50:910000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:50:910000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:50:910000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:50:910000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:910000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:910000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:910000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:910000	Image (timestamp img_nr 55151309) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:50:910000	Leaving grab_single
+      	                main	11/11/2015 09:58:50:910000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:50:910000	Image inverted
+      	         grab_single	11/11/2015 09:58:50:910000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:910000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:910000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:910000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:50:910000	Image retrived
+      	         grab_single	11/11/2015 09:58:50:910000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:50:910000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:50:910000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:50:910000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:50:910000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:50:910000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:50:910000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:50:910000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:50:910000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:910000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:50:910000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:920000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:50:920000	Image (timestamp img_nr 21233515) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:50:920000	Leaving grab_single
+      	                main	11/11/2015 09:58:50:920000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:50:920000	Image inverted
+      	         grab_single	11/11/2015 09:58:50:920000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:50:920000	Start aquire
+      	         grab_single	11/11/2015 09:58:50:920000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:50:920000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:51:920000	Image retrived
+      	         grab_single	11/11/2015 09:58:51:920000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:51:920000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:51:920000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:51:920000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:51:920000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:51:920000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:51:920000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:51:920000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:51:920000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:920000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:920000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:930000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:930000	Image (timestamp img_nr 74129201) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:51:930000	Leaving grab_single
+      	                main	11/11/2015 09:58:51:930000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:51:930000	Image inverted
+      	         grab_single	11/11/2015 09:58:51:930000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:51:930000	Start aquire
+      	         grab_single	11/11/2015 09:58:51:930000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:51:930000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:51:930000	Image retrived
+      	         grab_single	11/11/2015 09:58:51:930000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:51:930000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:51:930000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:51:930000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:51:930000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:51:930000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:51:930000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:51:930000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:51:930000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:930000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:940000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:940000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:940000	Image (timestamp img_nr 36331554) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:51:940000	Leaving grab_single
+      	                main	11/11/2015 09:58:51:940000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:51:950000	Image inverted
+      	         grab_single	11/11/2015 09:58:51:950000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:51:950000	Start aquire
+      	         grab_single	11/11/2015 09:58:51:950000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:51:950000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:51:950000	Image retrived
+      	         grab_single	11/11/2015 09:58:51:950000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:51:950000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:51:950000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:51:950000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:51:950000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:51:950000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:51:950000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:51:950000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:51:950000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:950000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:51:950000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:960000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:51:960000	Image (timestamp img_nr 77627100) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:51:960000	Leaving grab_single
+      	                main	11/11/2015 09:58:51:960000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:51:960000	Image inverted
+      	         grab_single	11/11/2015 09:58:51:960000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:51:960000	Start aquire
+      	         grab_single	11/11/2015 09:58:51:960000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:51:960000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:51:960000	Image retrived
+      	         grab_single	11/11/2015 09:58:51:960000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:52:960000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:52:960000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:52:960000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:52:960000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:52:960000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:52:960000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:52:960000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:52:960000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:960000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:960000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:970000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:970000	Image (timestamp img_nr 13587407) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:52:970000	Leaving grab_single
+      	                main	11/11/2015 09:58:52:970000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:52:980000	Image inverted
+      	         grab_single	11/11/2015 09:58:52:980000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:52:980000	Start aquire
+      	         grab_single	11/11/2015 09:58:52:980000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:52:980000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:52:980000	Image retrived
+      	         grab_single	11/11/2015 09:58:52:980000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:52:980000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:52:980000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:52:980000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:52:980000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:52:980000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:52:980000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:52:980000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:52:980000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:980000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:980000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:980000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:980000	Image (timestamp img_nr 58152895) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:52:980000	Leaving grab_single
+      	                main	11/11/2015 09:58:52:980000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:52:990000	Image inverted
+      	         grab_single	11/11/2015 09:58:52:990000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:52:990000	Start aquire
+      	         grab_single	11/11/2015 09:58:52:990000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:52:990000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:52:990000	Image retrived
+      	         grab_single	11/11/2015 09:58:52:990000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:52:990000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:52:990000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:52:990000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:52:990000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:52:990000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:52:990000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:52:990000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:52:990000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:990000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:990000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:990000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:990000	Image (timestamp img_nr 23600368) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:52:990000	Leaving grab_single
+      	                main	11/11/2015 09:58:52:990000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:52:000000	Image inverted
+      	         grab_single	11/11/2015 09:58:52:000000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:52:000000	Start aquire
+      	         grab_single	11/11/2015 09:58:52:000000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:52:000000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:52:000000	Image retrived
+      	         grab_single	11/11/2015 09:58:52:000000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:52:000000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:52:000000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:52:000000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:52:000000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:52:000000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:52:000000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:52:000000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:52:000000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:000000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:52:000000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:000000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:52:000000	Image (timestamp img_nr 71248580) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:52:000000	Leaving grab_single
+      	                main	11/11/2015 09:58:52:000000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:52:000000	Image inverted
+      	         grab_single	11/11/2015 09:58:52:000000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:52:000000	Start aquire
+      	         grab_single	11/11/2015 09:58:52:000000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:52:000000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:52:000000	Image retrived
+      	         grab_single	11/11/2015 09:58:52:000000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:53:000000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:53:000000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:53:000000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:53:000000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:53:000000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:53:000000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:53:000000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:53:000000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:000000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:000000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:010000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:010000	Image (timestamp img_nr 3759435) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:53:010000	Leaving grab_single
+      	                main	11/11/2015 09:58:53:010000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:53:010000	Image inverted
+      	         grab_single	11/11/2015 09:58:53:010000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:53:010000	Start aquire
+      	         grab_single	11/11/2015 09:58:53:010000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:53:010000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:53:010000	Image retrived
+      	         grab_single	11/11/2015 09:58:53:010000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:53:010000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:53:010000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:53:010000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:53:010000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:53:010000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:53:010000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:53:010000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:53:010000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:010000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:010000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:020000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:020000	Image (timestamp img_nr 52710580) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:53:020000	Leaving grab_single
+      	                main	11/11/2015 09:58:53:020000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:53:030000	Image inverted
+      	         grab_single	11/11/2015 09:58:53:030000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:53:030000	Start aquire
+      	         grab_single	11/11/2015 09:58:53:030000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:53:030000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:53:030000	Image retrived
+      	         grab_single	11/11/2015 09:58:53:030000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:53:030000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:53:030000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:53:030000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:53:030000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:53:030000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:53:030000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:53:030000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:53:030000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:030000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:53:030000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:030000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:53:030000	Image (timestamp img_nr 111662622) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:53:030000	Leaving grab_single
+      	                main	11/11/2015 09:58:53:030000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:53:040000	Image inverted
+      	         grab_single	11/11/2015 09:58:54:040000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:54:040000	Start aquire
+      	         grab_single	11/11/2015 09:58:54:040000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:54:040000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:54:040000	Image retrived
+      	         grab_single	11/11/2015 09:58:54:040000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:54:040000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:54:040000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:54:040000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:54:040000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:54:040000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:54:040000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:54:040000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:54:040000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:54:040000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:54:040000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:54:050000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:54:050000	Image (timestamp img_nr 30735152) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:54:050000	Leaving grab_single
+      	                main	11/11/2015 09:58:54:050000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:54:060000	Image inverted
+      	         grab_single	11/11/2015 09:58:54:060000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:54:060000	Start aquire
+      	         grab_single	11/11/2015 09:58:54:060000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:54:060000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:54:060000	Image retrived
+      	         grab_single	11/11/2015 09:58:54:060000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:54:060000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:54:060000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:54:060000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:54:060000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:54:060000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:54:060000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:54:060000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:54:060000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:54:060000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:54:060000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:54:070000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:54:070000	Image (timestamp img_nr 96333851) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:54:070000	Leaving grab_single
+      	                main	11/11/2015 09:58:54:070000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:54:080000	Image inverted
+      	         grab_single	11/11/2015 09:58:54:080000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:54:080000	Start aquire
+      	         grab_single	11/11/2015 09:58:54:080000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:54:080000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:54:080000	Image retrived
+      	         grab_single	11/11/2015 09:58:54:080000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:55:080000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:55:080000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:55:080000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:55:080000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:55:080000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:55:080000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:55:080000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:55:080000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:55:080000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:55:090000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:55:090000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:55:090000	Image (timestamp img_nr 19744061) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:55:090000	Leaving grab_single
+      	                main	11/11/2015 09:58:55:090000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:55:100000	Image inverted
+      	         grab_single	11/11/2015 09:58:55:100000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:55:100000	Start aquire
+      	         grab_single	11/11/2015 09:58:55:100000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:55:100000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:55:100000	Image retrived
+      	         grab_single	11/11/2015 09:58:55:100000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:55:100000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:55:100000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:55:100000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:55:100000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:55:100000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:55:100000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:55:100000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:55:100000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:55:100000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:55:100000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:55:120000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:55:120000	Image (timestamp img_nr 21836815) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:55:120000	Leaving grab_single
+      	                main	11/11/2015 09:58:55:120000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:55:120000	Image inverted
+      	         grab_single	11/11/2015 09:58:55:120000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:55:120000	Start aquire
+      	         grab_single	11/11/2015 09:58:55:120000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:55:120000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:55:120000	Image retrived
+      	         grab_single	11/11/2015 09:58:56:120000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:56:120000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:56:120000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:56:120000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:56:120000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:56:120000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:56:120000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:56:120000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:56:120000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:120000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:120000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:120000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:120000	Image (timestamp img_nr 53320484) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:56:120000	Leaving grab_single
+      	                main	11/11/2015 09:58:56:120000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:56:130000	Image inverted
+      	         grab_single	11/11/2015 09:58:56:130000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:56:130000	Start aquire
+      	         grab_single	11/11/2015 09:58:56:130000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:56:130000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:56:130000	Image retrived
+      	         grab_single	11/11/2015 09:58:56:130000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:56:130000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:56:130000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:56:130000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:56:130000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:56:130000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:56:130000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:56:130000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:56:130000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:130000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:130000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:140000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:140000	Image (timestamp img_nr 11962519) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:56:140000	Leaving grab_single
+      	                main	11/11/2015 09:58:56:140000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:56:140000	Image inverted
+      	         grab_single	11/11/2015 09:58:56:140000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:56:140000	Start aquire
+      	         grab_single	11/11/2015 09:58:56:140000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:56:140000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:56:140000	Image retrived
+      	         grab_single	11/11/2015 09:58:56:140000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:56:140000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:56:140000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:56:140000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:56:140000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:56:140000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:56:140000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:56:140000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:56:140000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:140000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:140000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:140000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:140000	Image (timestamp img_nr 66078679) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:56:140000	Leaving grab_single
+      	                main	11/11/2015 09:58:56:140000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:56:140000	Image inverted
+      	         grab_single	11/11/2015 09:58:56:140000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:56:140000	Start aquire
+      	         grab_single	11/11/2015 09:58:56:140000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:56:140000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:56:140000	Image retrived
+      	         grab_single	11/11/2015 09:58:56:140000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:56:140000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:56:140000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:56:140000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:56:140000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:56:140000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:56:140000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:56:140000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:56:140000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:140000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:56:140000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:150000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:56:150000	Image (timestamp img_nr 71185480) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:56:150000	Leaving grab_single
+      	                main	11/11/2015 09:58:56:150000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:56:160000	Image inverted
+      	         grab_single	11/11/2015 09:58:56:160000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:56:160000	Start aquire
+      	         grab_single	11/11/2015 09:58:56:160000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:56:160000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:56:160000	Image retrived
+      	         grab_single	11/11/2015 09:58:56:160000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:57:160000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:57:160000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:57:160000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:57:160000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:57:160000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:57:160000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:57:160000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:57:160000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:57:160000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:57:160000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:57:160000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:57:160000	Image (timestamp img_nr 136262306) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:57:160000	Leaving grab_single
+      	                main	11/11/2015 09:58:57:160000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:57:160000	Image inverted
+      	         grab_single	11/11/2015 09:58:57:160000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:57:160000	Start aquire
+      	         grab_single	11/11/2015 09:58:57:160000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:57:160000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:57:160000	Image retrived
+      	         grab_single	11/11/2015 09:58:57:160000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:57:160000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:57:160000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:57:160000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:57:160000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:58:160000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:58:170000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:58:170000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:58:170000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:170000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:170000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:170000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:170000	Image (timestamp img_nr 32320409) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:58:170000	Leaving grab_single
+      	                main	11/11/2015 09:58:58:170000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:58:170000	Image inverted
+      	         grab_single	11/11/2015 09:58:58:170000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:58:170000	Start aquire
+      	         grab_single	11/11/2015 09:58:58:170000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:58:170000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:58:170000	Image retrived
+      	         grab_single	11/11/2015 09:58:58:170000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:58:170000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:58:170000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:58:170000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:58:170000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:58:170000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:58:170000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:58:170000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:58:170000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:170000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:170000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:180000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:180000	Image (timestamp img_nr 53533691) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:58:180000	Leaving grab_single
+      	                main	11/11/2015 09:58:58:180000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:58:180000	Image inverted
+      	         grab_single	11/11/2015 09:58:58:180000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:58:180000	Start aquire
+      	         grab_single	11/11/2015 09:58:58:180000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:58:180000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:58:180000	Image retrived
+      	         grab_single	11/11/2015 09:58:58:180000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:58:180000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:58:180000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:58:180000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:58:180000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:58:180000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:58:180000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:58:180000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:58:180000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:180000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:58:180000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:180000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:58:180000	Image (timestamp img_nr 35740555) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:58:180000	Leaving grab_single
+      	                main	11/11/2015 09:58:58:180000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:58:190000	Image inverted
+      	         grab_single	11/11/2015 09:58:58:190000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:58:190000	Start aquire
+      	         grab_single	11/11/2015 09:58:58:190000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:58:190000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:59:190000	Image retrived
+      	         grab_single	11/11/2015 09:58:59:190000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:59:190000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:59:190000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:59:190000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:59:190000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:59:190000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:59:190000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:59:190000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:59:190000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:190000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:190000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:200000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:200000	Image (timestamp img_nr 72351244) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:59:200000	Leaving grab_single
+      	                main	11/11/2015 09:58:59:200000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:59:210000	Image inverted
+      	         grab_single	11/11/2015 09:58:59:210000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:59:210000	Start aquire
+      	         grab_single	11/11/2015 09:58:59:210000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:59:210000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:59:210000	Image retrived
+      	         grab_single	11/11/2015 09:58:59:210000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:59:210000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:59:210000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:59:210000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:59:210000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:59:210000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:59:210000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:59:210000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:59:210000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:210000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:210000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:220000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:220000	Image (timestamp img_nr 111248191) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:59:220000	Leaving grab_single
+      	                main	11/11/2015 09:58:59:220000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:59:220000	Image inverted
+      	         grab_single	11/11/2015 09:58:59:220000	Entering grab_single
+      	         grab_single	11/11/2015 09:58:59:220000	Start aquire
+      	         grab_single	11/11/2015 09:58:59:220000	Started capturing frames
+      	         grab_single	11/11/2015 09:58:59:220000	Waiting for image (10 miliseconds)
+      	         grab_single	11/11/2015 09:58:59:220000	Image retrived
+      	         grab_single	11/11/2015 09:58:59:220000	Checking DMA length
+      	         grab_single	11/11/2015 09:58:59:220000	DMA length is OK.
+      	         grab_single	11/11/2015 09:58:59:220000	Getting frame buffer address
+      	         grab_single	11/11/2015 09:58:59:220000	Frame buffer address was successfully retrieved
+      	         grab_single	11/11/2015 09:58:59:220000	Stopping frame aquisition
+      	         grab_single	11/11/2015 09:58:59:220000	Stopped frame aquisition
+      	         grab_single	11/11/2015 09:58:59:220000	Getting actual image size
+      	         grab_single	11/11/2015 09:58:59:220000	Got frame size (2560x2160) from grabber.
+      	         grab_single	11/11/2015 09:58:59:220000	Allocatting 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:220000	Allocated 2560x2160x2 bytes buffer for image.
+      	         grab_single	11/11/2015 09:58:59:220000	Extracting image from grabber into buffer (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:230000	Retrieving timestamp from frame (Unverifiable)
+      	         grab_single	11/11/2015 09:58:59:230000	Image (timestamp img_nr 41851973) successfully extracted from frame grabber
+
+      	         grab_single	11/11/2015 09:58:59:230000	Leaving grab_single
+      	                main	11/11/2015 09:58:59:230000	Grabbed new frame successfully
+      	                main	11/11/2015 09:58:59:230000	Image inverted

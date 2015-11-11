@@ -1,0 +1,17 @@
+Rubble's MINT
+
+Created by Lucas Sousa de Oliveira (Summer 2012)
+
+What is MINT?
+	This program should control the Rubble experiment, trying to be as fail-proof as possible.
+
+How to run MINT?
+	Simply "make run" to start the compilation/execution script. If any file was changed,
+the source will be compiled again. If not, the script will verify if there's already an 
+instance of the program running and run it if not.
+
+Requirements:
+	- Drivers:
+		- Galil Tools 1.4.0
+		- SISO (for Camera)
+		- Menable (for Camera)
