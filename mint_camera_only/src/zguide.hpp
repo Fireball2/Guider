@@ -41,5 +41,7 @@ void ImageWindow(uint16_t *pImage, uint16_t *pWindow, int nRows, int nCols, doub
 void ImageWindow(uint16_t *pImage, uint16_t *pWindow, int nRows, int nCols, int sizeX, int sizeY, int origin_x, int origin_y);
 void ImageWindow(uint16_t *pImage, uint16_t *pWindow, int nRows, int nCols, int margin);
 void ZeroWindow(uint16_t *pWindow, int nSize);
+void SaveFITS(uint16_t * p_img, const int& CamCols, const int& CamRows);
+void Centroid(uint16_t * win, const int & windowSize, const uint16_t & CamSat, double & x_centroid, double & y_centroid);
 
 #endif

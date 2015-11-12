@@ -18,20 +18,13 @@ int main (int argc, const char * argv[]){
    unsigned int c_ok = -1;
    //We need a place to save the images grabbed by the camera
    uint16_t* p_img = NULL; 
-   //We may need to build filenames for the images if we store them in FITS
-   struct tm timeinfo;					
-   char time1[500],name[500],aux[500];	
-   time_t rawtime;	
-   time(&rawtime);
    //We may need some image parameters to invert the images
    int NegativeIm = GUIDE_INVERT;           //If 1 the image used is a negative and needs inversion
    const int CamRows = 2160;			//Camera rows in 1x1 mode
    const int CamCols = 2560;			//Camera columns in 1x1 mode
    const uint16_t CamSat = 65535;		//Maximum pixel value (saturation)
 
-   int StarSelect = 1;				//If 1 the program selects automatically a star
-
-   if (StarSelect == 1){
+   if (GUIDE_STAR_AUTO == 1){
 /* In automatic mode the program does the following:
 	1. Makes a long exposure frame
 	2. Extracts stars from it, chooses the 2 brightests, shows in console their pixel location in the frame
@@ -79,29 +72,8 @@ int main (int argc, const char * argv[]){
    #endif
    //Saves frame in FITS file if needed
    #if GUIDE_FITS_INITIAL
-   cout << "Saving frame in FITS... ";
-   //Prepares the FITS file name
-   log(__FUNCTION__,OK,"Forming filename using system time information");
-   timeinfo = *localtime(&rawtime);
-   strftime(time1, 500, (HOMEPATH"/imgs/%Y-%m-%d_%H-%M-%S_%%06d.fits"), &timeinfo);
-   sprintf(name,time1,clock()%CLOCKS_PER_SEC);
-   log(__FUNCTION__,OK,"Filename formed. Result: "+string(name));
-   //Saves the image in a FITS file
-   if(c_ok == OK) {
-      uint16_t att;   //Number of attempts to save the image
-      log(__FUNCTION__, OK, "Attempting to save image");
-      for (c_ok = NOTHING, att = 0; c_ok != OK && ++att < MAX_RETRY; c_ok = save_ptr2fits(name,CamCols,CamRows,p_img));
-      if(c_ok != OK){
-         sprintf(aux,"Could not save image '%s' in %d tries",name,MAX_RETRY);
-         log(__FUNCTION__,ERROR,aux);
-      }
-   }
-   else{
-      log(__FUNCTION__, OK, "Error: Could not grab new frame");
-   }
-   (c_ok==0)? cout << name << " saved!\n" : cout << "Error: could not save FITS\n";
+   SaveFITS(p_img, CamCols, CamRows);
    #endif
-
 
    //**************************************************************************
    //2. Extracts the sources, picks 2 brightest to track and prepares window structure
@@ -115,25 +87,7 @@ int main (int argc, const char * argv[]){
    (GUIDE_CROP==1)? cout << "Image cropped by " << FrameMargin << " pixels to avoid fov borders\n" : cout << "Image not cropped, careful with fov borders\n";
    //Saves the cropped image in a FITS file
    #if GUIDE_FITS_INITIAL
-   cout << "Saving cropped image...";
-      log(__FUNCTION__,OK,"Forming filename using system time information");
-   timeinfo = *localtime(&rawtime);
-   strftime(time1, 500, (HOMEPATH"/imgs/%Y-%m-%d_%H-%M-%S_%%06d_cropped.fits"), &timeinfo);
-   sprintf(name,time1,clock()%CLOCKS_PER_SEC);
-   log(__FUNCTION__,OK,"Filename formed. Result: "+string(name));
-   if(c_ok == OK) {
-      uint16_t att;   //Number of attempts to save the image
-      log(__FUNCTION__, OK, "Attempting to save image");
-      for (c_ok = NOTHING, att = 0; c_ok != OK && ++att < MAX_RETRY; c_ok = save_ptr2fits(name,FrameX,FrameY,frame));
-      if(c_ok != OK){
-         sprintf(aux,"Could not save image '%s' in %d tries",name,MAX_RETRY);
-         log(__FUNCTION__,ERROR,aux);
-      }
-   }
-   else{
-      log(__FUNCTION__, OK, "Error: Could not grab new frame");
-   }
-   (c_ok==0)? cout << name << " saved!\n" : cout << "Could not save cropped image in FITS\n";
+   SaveFITS(frame, FrameX, FrameY);
    #endif
 /*
    //DEBUG: just a check to see whether there are saturated pixels in the frame (erase later)
@@ -241,11 +195,8 @@ int main (int argc, const char * argv[]){
    uint16_t *second_win = new uint16_t[windowSize*windowSize];
    uint16_t *second_win_cum = new uint16_t[windowSize*windowSize];
    uint16_t maxframe = 0;
+   //Ensures there stacked window for the secondary star is zero
    ZeroWindow(second_win_cum,windowSize*windowSize);
-	frameblob first_win_blob(first_win, windowSize, windowSize, 16, 1.0); 
-   frameblob second_win_blob(second_win_cum, windowSize, windowSize, 16, 1.0); 
-	static bloblist *pFirstWinBlob;
-   static bloblist *pSecondWinBlob;
    //Start the main loop
 	for (int count = 1; count < countmax; count++){
 	  //Grabs a frame
@@ -265,34 +216,12 @@ int main (int argc, const char * argv[]){
       }
 		//cout << "... new frame grabbed\n";
 	 	//Slices the image to get just the main guidance window
-		//cout << "Slicing new frame into tracking window...\n";
 		ImageWindow(p_img, first_win, CamRows, CamCols, windowSize, windowSize, first_x_ref, first_y_ref);
-		//cout << "... tracking window sliced\n";
 	 	//Gets the centroid of guiding star in window coordinates
-		//cout << "Getting the new centroid position...\n";
-		first_win_blob.clearblobs();   //not necessary but better to clear blobs in case there are some from previous calls
-      //Sets parameters to find blob
-      first_win_blob.set_satval(CamSat);    //pixel saturation level
-      first_win_blob.set_grid(100);         //size of grid, determines how many sources will be found (max 1 source per grid)
-      first_win_blob.set_cenbox(80);        //size of box to compute centroid. It has to be large enough to hold brightest star
-      first_win_blob.set_apbox(40);         //size of aperture box to compute source flux. It has to be large enough to hold brightest star
-      first_win_blob.set_threshold(5.0);    //threshold for detection (5 sigma now)
-      first_win_blob.set_disttol(50*50);    //maximum allowable distance betwee sources, now at 50 pixels
-      //Computes the centroid
-     	first_win_blob.calc_mapstat();    		// calc map mean + count # saturated pixels each column
-      first_win_blob.calc_searchgrid();    	// find cells in search grid with source
-      first_win_blob.calc_centroid();    	   // after search/flux, calculate centroids
-     	first_win_blob.calc_flux();    		   // sum flux in apertures, check if pointlike
-      first_win_blob.fix_multiple();         // check for multiple sources within disttol and fix
-      first_win_blob.sortblobs();		      // sorts blobs from highest to lowest flux
-      //Provides the centroid coordinates
-		pFirstWinBlob = first_win_blob.getblobs();     //list of stars with x, y centroid coordinates and ordered by flux
-	 	first_new_x = pFirstWinBlob->getx();	        //Centroid x coordinate in clipped frame pixel coordinates
-	 	first_new_y = pFirstWinBlob->gety();
+      Centroid(first_win, windowSize, CamSat, first_new_x, first_new_y);
 		//New centroid coordinates in image coordinates (pixels)
 		first_new_x = first_new_x + first_x_ref; 
 		first_new_y = first_new_y + first_y_ref;
-		//cout << "New centroid position: " << first_new_x << ", " << first_new_y << endl;
 	 	//x,y error in pixels
 	 	error_x = first_new_x - first_old_x;
 	 	error_y = first_new_y - first_old_y;
@@ -305,40 +234,25 @@ int main (int argc, const char * argv[]){
 
       //Slices the secondary window
       ImageWindow(p_img, second_win, CamRows, CamCols, windowSize, windowSize, second_x_ref, second_y_ref);
-      //If it is rotation time, computes centroid and rotation, if not stacks until saturation
-      //Stack if the secondary window is not saturated
+      //Stack if the secondary window is not saturated and stacking is enabled
       maxframe = 0;
       for (int i=0; i<windowSize*windowSize; i++){
          maxframe = max(maxframe, second_win_cum[i]);
       }
-      if (maxframe < CAM_SATURATION){
+      if (GUIDE_STACK_SECONDARY == 1 && maxframe < CAM_SATURATION){
          for (int i=0; i<windowSize*windowSize; i++){
             second_win_cum[i] = second_win_cum[i] + second_win[i];
          }
       }
+      else{
+         for (int i=0; i<windowSize*windowSize; i++){
+            second_win_cum[i] = second_win[i];
+         }
+      }
       // If it is time for rotation, compute rotation, output it, and zero cumulated secondary window
       if(count%GUIDE_COUNT_ROTATION==0){
-         //Compute rotation
          //First get the new centroid
-         second_win_blob.clearblobs();   //not necessary but better to clear blobs in case there are some from previous calls
-         //Sets parameters to find blob
-         second_win_blob.set_satval(CamSat);    //pixel saturation level
-         second_win_blob.set_grid(100);         //size of grid, determines how many sources will be found (max 1 source per grid)
-         second_win_blob.set_cenbox(80);        //size of box to compute centroid. It has to be large enough to hold brightest star
-         second_win_blob.set_apbox(40);         //size of aperture box to compute source flux. It has to be large enough to hold brightest star
-         second_win_blob.set_threshold(5.0);    //threshold for detection (5 sigma now)
-         second_win_blob.set_disttol(50*50);    //maximum allowable distance betwee sources, now at 50 pixels
-         //Computes the centroid
-         second_win_blob.calc_mapstat();         // calc map mean + count # saturated pixels each column
-         second_win_blob.calc_searchgrid();      // find cells in search grid with source
-         second_win_blob.calc_centroid();        // after search/flux, calculate centroids
-         second_win_blob.calc_flux();            // sum flux in apertures, check if pointlike
-         second_win_blob.fix_multiple();         // check for multiple sources within disttol and fix
-         second_win_blob.sortblobs();            // sorts blobs from highest to lowest flux
-         //Provides the centroid coordinates
-         pSecondWinBlob = second_win_blob.getblobs();     //list of stars with x, y centroid coordinates and ordered by flux
-         second_new_x = pSecondWinBlob->getx();           //Centroid x coordinate in clipped frame pixel coordinates
-         second_new_y = pSecondWinBlob->gety();
+         Centroid(second_win_cum, windowSize, CamSat, second_new_x, second_new_y);
          //New centroid coordinates in image coordinates (pixels)
          second_new_x = second_new_x + second_x_ref; 
          second_new_y = second_new_y + second_y_ref;
@@ -350,18 +264,18 @@ int main (int argc, const char * argv[]){
          angle_old = angle_new;
          //Need to convert error in angle!
 
+         //And let's not forget to zero the cumulated window
+         ZeroWindow(second_win_cum,windowSize*windowSize);
       }
-
 	 }
 	 //Free guiding window after usage to prevent leaks
 	 delete [] first_win;
     delete [] second_win;
     delete [] second_win_cum;
-	
-
    }
    else{
       log(__FUNCTION__, OK, "Selected manual star guiding choice, not implemented yet");
+      cout << "Selected manual star guiding choice, not implemented yet\n";
    }
 
    //*********************************************************************************************************
@@ -394,6 +308,11 @@ int main (int argc, const char * argv[]){
    
    return 0;
 }
+
+
+
+
+
 //*************************************************************************************************************************************************************
 //*************************************************************************************************************************************************************
 void ImageInvert(uint16_t *pImage, int ImSize, uint16_t MaxValue){
@@ -499,6 +418,65 @@ void ZeroWindow(uint16_t *pWindow, int nSize){
    /* This function zeros the elements of a window */
    for (int element = 0; element < nSize; element++){
       pWindow[element] = 0;
+   }
+}
+//*******************************************************************************************************************************************
+void SaveFITS(uint16_t * p_img, const int& CamCols, const int& CamRows){
+   /* This function uses the function save_ptr2fits() to save an image to fits file
+   so it will need fitswrapper.hpp, it also uses logs functions
+   */
+   //Prepares the FITS file name and logs (may want to remove the log later)
+   unsigned int c_ok = 0;
+   struct tm timeinfo;              
+   char time1[500],name[500],aux[500]; 
+   time_t rawtime;   
+   time(&rawtime);
+   log(__FUNCTION__,OK,"Forming filename using system time information");
+   timeinfo = *localtime(&rawtime);
+   strftime(time1, 500, (HOMEPATH"/imgs/%Y-%m-%d_%H-%M-%S_%%06d.fits"), &timeinfo);
+   sprintf(name,time1,clock()%CLOCKS_PER_SEC);
+   log(__FUNCTION__,OK,"Filename formed. Result: "+string(name));
+   cout << "Saving " << name << " ... ";
+   //Saves the image in a FITS file
+   uint16_t att;   //Number of attempts to save the image
+   log(__FUNCTION__, OK, "Attempting to save image");
+   for (c_ok = NOTHING, att = 0; c_ok != OK && ++att < MAX_RETRY; c_ok = save_ptr2fits(name,CamCols,CamRows,p_img));
+   if(c_ok != OK){
+      sprintf(aux,"Could not save image '%s' in %d tries",name,MAX_RETRY);
+      log(__FUNCTION__,ERROR,aux);
+   }
+   (c_ok==0)? cout << " saved!\n" : cout << "Error: could not save FITS\n";
+}
+//*******************************************************************************************************************************************
+void Centroid(uint16_t * win, const int & windowSize, const uint16_t & CamSat, double & x_centroid, double & y_centroid){
+
+   //Creates a frameblob object from the window (an image matrix), assuming 16 bit images and 1.0 platescale
+   frameblob win_blob(win, windowSize, windowSize, 16, 1.0); 
+   //Clears the object from potential blobs (not necessary)
+   win_blob.clearblobs();
+   //Sets parameters to find blobs in the image
+   win_blob.set_satval(CamSat);    //pixel saturation level
+   win_blob.set_grid(100);         //size of grid, determines how many sources will be found (max 1 source per grid)
+   win_blob.set_cenbox(80);        //size of box to compute centroid. It has to be large enough to hold brightest star
+   win_blob.set_apbox(40);         //size of aperture box to compute source flux. It has to be large enough to hold brightest star
+   win_blob.set_threshold(5.0);    //threshold for detection (5 sigma now)
+   win_blob.set_disttol(50*50);    //maximum allowable distance betwee sources, now at 50 pixels
+   //Find blobs and stores in a list their pixel centroid coordinates and flux. List ordered by flux
+   win_blob.calc_mapstat();         // calc map mean + count # saturated pixels each column
+   win_blob.calc_searchgrid();      // find cells in search grid with source
+   win_blob.calc_centroid();        // after search/flux, calculate centroids
+   win_blob.calc_flux();            // sum flux in apertures, check if pointlike
+   win_blob.fix_multiple();         // check for multiple sources within disttol and fix
+   win_blob.sortblobs();            // sorts blobs from highest to lowest flux
+   //Extracts the first (brightest) blob and gets its centroid coordinates, only if it gets blobls
+   if(win_blob.Numblobs()>0){
+      static bloblist *pWinBlob;
+      pWinBlob = win_blob.getblobs();     //list of stars with x, y centroid coordinates and ordered by flux
+      x_centroid = pWinBlob->getx();      //Centroid x coordinate in clipped frame pixel coordinates
+      y_centroid = pWinBlob->gety();
+   }
+   else{
+      cout << "Error Centroid(): No blobs found, centroid left unchanged!\n";
    }
 }
 
