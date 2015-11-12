@@ -51,16 +51,18 @@
 #define FIND_ASTROMETRY		"/home/salo/FB/astrometry/bin/solve-field --scale-low 1 --no-fits2fits --no-verify --no-plots "
 
 /* Guiding parameters */
-#define GUIDE_CAM_WAIT_FRAME	10
-#define GUIDE_LONG_EXPOSURE		200	// milliseconds. Exposure used at the beginning of guidance for star acquisition
-#define GUIDE_INVERT			ENABLE
-#define GUIDE_FITS_INITIAL		ENABLE
-#define GUIDE_CROP				ENABLE
-#define GUIDE_CROP_MARGIN		100
-#define GUIDE_WINDOW_SIZE		100
-#define GUIDE_DIST_MIN			250
-#define GUIDE_COUNT_MAX			35
-#define GUIDE_COUNT_ROTATION	30
+#define GUIDE_CAM_WAIT_FRAME	100 		//milliseconds. Time waits to get frame before raising error
+#define GUIDE_LONG_EXPOSURE		200			//milliseconds. Exposure used at the beginning of guidance for star acquisition
+#define GUIDE_INVERT			ENABLE 		//invert image (lab)
+#define GUIDE_FITS_INITIAL		ENABLE 		//save initial frames in fits
+#define GUIDE_STAR_AUTO			ENABLE 		//auto select 2 stars for guidance
+#define GUIDE_CROP				ENABLE 		//crop fov to avoid picking star close to border
+#define GUIDE_CROP_MARGIN		100 		//margin to crop fov in pixels
+#define GUIDE_WINDOW_SIZE		100 		//size of window around guiding star in pixels
+#define GUIDE_DIST_MIN			250 		//min dist in pixels between primary and secondary star (for rotation estimate)
+#define GUIDE_COUNT_MAX			20 			//number of guiding cycles for continuous
+#define GUIDE_COUNT_ROTATION	2  			//subcycles for rotation estimate (30 nominal)
+#define GUIDE_STACK_SECONDARY	ENABLE 		//allow to stack image for secondary to increase signal
 
 
 #endif
